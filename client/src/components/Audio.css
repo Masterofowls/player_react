@@ -1,0 +1,88 @@
+#root > div > div:has(> audio + button + p) {
+  position: fixed;
+  z-index: 20;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-height: 92px;
+  padding: 16px max(24px, calc((100vw - 1200px) / 2 + 24px));
+  padding-right: calc(max(24px, (100vw - 1200px) / 2 + 24px) + 108px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(24, 26, 24, 0.96);
+  box-shadow: 0 -14px 40px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(18px);
+}
+
+#root > div > div:has(> audio + button + p) > audio {
+  display: none;
+}
+
+#root > div > div:has(> audio + button + p) > button {
+  flex: 0 0 auto;
+  min-width: 76px;
+  min-height: 42px;
+  margin-left: 116px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  color: #101110;
+  background: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 150ms ease, background 150ms ease;
+}
+
+#root > div > div:has(> audio + button + p) > button:hover {
+  transform: scale(1.04);
+  background: var(--accent-hover);
+}
+
+#root > div > div:has(> audio + button + p) > p {
+  flex: 0 0 auto;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+#root > div > div:has(> audio + button + p) > input[type='range'] {
+  width: 100%;
+  height: 4px;
+  margin: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+#root > div > div:has(> audio + button + p) > input[type='range']:last-of-type {
+  flex: 0 0 110px;
+}
+
+@media (max-width: 640px) {
+  #root > div > div:has(> audio + button + p) {
+    gap: 12px;
+    min-height: 112px;
+    padding: 14px 124px 14px 16px;
+    flex-wrap: wrap;
+  }
+
+  #root > div > div:has(> audio + button + p) > button {
+    margin-left: 92px;
+  }
+
+  #root > div > div:has(> audio + button + p) > p {
+    margin-left: auto;
+  }
+
+  #root > div > div:has(> audio + button + p) > input[type='range']:first-of-type {
+    order: 5;
+    flex-basis: 100%;
+  }
+
+  #root > div > div:has(> audio + button + p) > input[type='range']:last-of-type {
+    flex-basis: 72px;
+  }
+}

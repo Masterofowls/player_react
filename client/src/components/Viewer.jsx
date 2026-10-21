@@ -1,3 +1,4 @@
+import "./Viewer.css";
 export default function Viewer({ song, onNext, onPrev }) {
   if (!song) {
     return null;

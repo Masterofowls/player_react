@@ -1,3 +1,4 @@
+import "./PlaylistPanel.css";
 import { useState } from "react";
 
 export default function PlaylistPanel({ playlists, onCreate, onDelete, onSelect, selectedPlaylist, playlistSongs, onRemoveSong, onPlay}) {

@@ -1,3 +1,4 @@
+import "./SongItem.css";
 export default function SongItem({song, onSelect, isLiked, onLike, canAdd, onAddToPlaylist}) {
   return (
     <li onClick={()=> onSelect(song)}>

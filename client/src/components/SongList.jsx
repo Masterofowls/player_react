@@ -1,3 +1,4 @@
+import "./SongList.css";
 import SongItem from "./SongItem";
 
 export default function SongList({songs, onSelect, onLike, likedIds, onAddToPlaylist, canAdd}) {

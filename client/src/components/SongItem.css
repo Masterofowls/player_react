@@ -1,0 +1,43 @@
+#root > div > ul > li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  padding: 10px 18px;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-primary);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+#root > div > ul > li:last-child {
+  border-bottom: 0;
+}
+
+#root > div > ul > li:hover {
+  background: var(--surface-hover);
+}
+
+#root > div > ul > li > button {
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: var(--text-secondary);
+  background: transparent;
+  font-size: 19px;
+  cursor: pointer;
+  transition: color 150ms ease, background 150ms ease;
+}
+
+#root > div > ul > li > button:first-of-type {
+  margin-left: auto;
+}
+
+#root > div > ul > li > button:hover {
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.08);
+}

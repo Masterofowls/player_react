@@ -1,0 +1,23 @@
+#root > div > ul {
+  grid-column: 1;
+  grid-row: 4;
+  align-self: start;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(25, 27, 25, 0.82);
+  list-style: none;
+}
+
+#root > div > ul:empty {
+  min-height: 84px;
+}
+
+@media (max-width: 800px) {
+  #root > div > ul {
+    grid-row: auto;
+  }
+}

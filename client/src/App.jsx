@@ -72,7 +72,11 @@ export default function App() {
   }
 
   function handleNext() {
+  if (!currentSong || queue.length === 0) return;
+
   const index = queue.findIndex((song) => song.id === currentSong.id);
+  if (index === -1 || (repeat === 'off' && index === queue.length - 1)) return;
+
   const nextIndex = (index + 1) % queue.length;
   setCurrentSong(queue[nextIndex]);
 }
@@ -203,9 +207,9 @@ function handlePlayPlaylist() {
       <p>Search: {query}</p>
       <SongList songs={filteredSongs} onSelect={handleSelect}  likedIds={likedIds} onLike={handleLike} onAddToPlaylist={handleAddToPlaylist}
   canAdd={Boolean(selectedPlaylist)}/>
-      <Audio song={currentSong} onNext={handleNext} repeat={repeat}/>
-      <button onClick={handleShuffle}>Shuffle: {isShuffle ? "on" : "off"}</button>
-      <button onClick={handleRepeat}>Repeat: {repeat}</button>
+      <Audio song={currentSong} onNext={handleNext} repeat={repeat} isOnlySong={queue.length === 1}/>
+      <button className={isShuffle ? "is-active" : ""} onClick={handleShuffle}>Shuffle: {isShuffle ? "on" : "off"}</button>
+      <button className={`${repeat !== "off" ? "is-active" : ""} ${repeat === "one" ? "is-repeat-one" : ""}`} onClick={handleRepeat} aria-label={`Repeat ${repeat}`} title={`Repeat ${repeat}`}>Repeat: {repeat}</button>
       <button onClick={() => setShowLikedOnly(!showLikedOnly)}>
        Liked only: {showLikedOnly ? "on" : "off"}
       </button>

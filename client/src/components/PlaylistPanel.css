@@ -1,0 +1,103 @@
+#root > div > div:has(> h2) {
+  grid-column: 3;
+  grid-row: 1 / span 7;
+  align-self: start;
+  min-width: 0;
+  padding: 22px 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(160deg, #1d201d, #171917 75%);
+}
+
+#root > div > div:has(> h2) h2 {
+  margin: 0 0 18px;
+  color: var(--text-primary);
+  font-family: Manrope, 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+#root > div > div:has(> h2) form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+#root > div > div:has(> h2) input {
+  width: 100%;
+  min-width: 0;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text-primary);
+  background: #111311;
+  font-size: 13px;
+}
+
+#root > div > div:has(> h2) button {
+  flex: 0 0 auto;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 999px;
+  color: #101110;
+  background: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+#root > div > div:has(> h2) button:hover {
+  background: var(--accent-hover);
+  transform: scale(1.03);
+}
+
+#root > div > div:has(> h2) ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#root > div > div:has(> h2) > ul > li,
+#root > div > div:has(> h2) > div > ul > li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 44px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#root > div > div:has(> h2) > ul > li:hover {
+  color: var(--text-primary);
+}
+
+#root > div > div:has(> h2) > div {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+#root > div > div:has(> h2) h3 {
+  margin: 0 0 14px;
+  color: var(--text-primary);
+  font-size: 15px;
+}
+
+#root > div > div:has(> h2) p {
+  margin: 12px 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+@media (max-width: 800px) {
+  #root > div > div:has(> h2) {
+    grid-row: auto;
+  }
+}

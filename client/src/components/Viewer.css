@@ -1,0 +1,56 @@
+#root > div > div:has(> audio + button + button) {
+  position: fixed;
+  z-index: 21;
+  bottom: 24px;
+  left: max(24px, calc((100vw - 1200px) / 2 + 24px));
+  display: flex;
+  gap: 10px;
+}
+
+#root > div > div:has(> audio + button + button) > audio {
+  display: none;
+}
+
+#root > div > div:has(> audio + button + button) > button {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--text-primary);
+  background: #292c29;
+  font-size: 0;
+  cursor: pointer;
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+#root > div > div:has(> audio + button + button) > button:first-of-type::before {
+  content: '‹';
+  font-size: 27px;
+  line-height: 1;
+}
+
+#root > div > div:has(> audio + button + button) > button:last-of-type::before {
+  content: '›';
+  font-size: 27px;
+  line-height: 1;
+}
+
+#root > div > div:has(> audio + button + button) > button:hover {
+  background: var(--surface-hover);
+  transform: scale(1.06);
+}
+
+@media (max-width: 640px) {
+  #root > div > div:has(> audio + button + button) {
+    bottom: 54px;
+    left: 16px;
+  }
+
+  #root > div > div:has(> audio + button + button) > button {
+    width: 34px;
+    height: 34px;
+  }
+}
